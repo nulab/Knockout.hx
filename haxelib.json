@@ -6,5 +6,6 @@
     "description": "Knockout extern",
     "version": "2.3.0",
     "releasenote": "Initial release",
-    "contributors": ["hakurai"]
+    "contributors": ["hakurai"],
+    "dependencies": {}
 }
