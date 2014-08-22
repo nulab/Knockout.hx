@@ -45,12 +45,12 @@ class Knockout {
 
 
 abstract BindingHandlerMap({}){
-    @:arrayAccess public inline function arrayAccess(key:String):BindingHandler {
-        return Reflect.field(this, key);
+    @:extern @:arrayAccess public inline function arrayAccess(key:String):BindingHandler untyped {
+        return this[key];
     }
 
-    @:arrayAccess public inline function arrayWrite(key:String, value:BindingHandler):Void {
-        Reflect.setField(this, key, value);
+    @:extern @:arrayAccess public inline function arrayWrite(key:String, value:BindingHandler):Void untyped {
+        this[key] = value;
     }
 }
 

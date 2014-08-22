@@ -3,47 +3,47 @@ import knockout.Subscribable;
 
 abstract DependentObservable<T>(DependentObservableExtern<T>) from DependentObservableExtern<T>{
 
-    public static var fn:Dynamic = DependentObservableFn;
+    inline public static var fn:Dynamic = DependentObservableFn;
 
-    inline function new(observable:DependentObservableExtern<T>) {
+    @:extern inline function new(observable:DependentObservableExtern<T>) {
         this = observable;
     }
 
-    @:to inline public function toValue():T {
+    @:extern @:to inline public function toValue():T {
         return this.getter()();
     }
 
-    inline public function set(newValue:T):Void {
+    @:extern inline public function set(newValue:T):Void {
         return this.setter()(newValue);
     }
 
-    inline public function get():Null<T> {
+    @:extern inline public function get():Null<T> {
         return this.getter()();
     }
 
-    inline public function peek():T {
+    @:extern inline public function peek():T {
         return this.peek();
     }
 
-    inline public function isActive():Bool {
+    @:extern inline public function isActive():Bool {
         return this.isActive();
     }
 
 // Subscribable methods
 
-    inline public function extend(source:Dynamic):Subscribable<T> {
+    @:extern inline public function extend(source:Dynamic):Subscribable<T> {
         return this.extend(source);
     }
 
-    inline public function dispose():Void {
+    @:extern inline public function dispose():Void {
         this.dispose();
     }
 
-    inline public function getSubscriptionsCount():Int {
+    @:extern inline public function getSubscriptionsCount():Int {
         return this.getSubscriptionsCount();
     }
 
-    inline public function subscribe(call:T -> Void, ?callbackTarget:Dynamic, ?event:String):Subscription {
+    @:extern inline public function subscribe(call:T -> Void, ?callbackTarget:Dynamic, ?event:String):Subscription {
         return this.subscribe(call, callbackTarget, event);
     }
 }
