@@ -8,7 +8,7 @@ extern
 class TemplateEngine {
     public var allowTemplateRewriting:Bool;
     
-    public function renderTemplateSource(templateSource:Dynamic, bindingContext:BindingContext, option:Dynamic):Dynamic;
+    public function renderTemplateSource(templateSource:TemplateSource, bindingContext:BindingContext, option:Dynamic):Dynamic;
     
     public function createJavaScriptEvaluatorBlock(script:String):String;
     
