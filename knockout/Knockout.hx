@@ -15,22 +15,44 @@ class Knockout {
     public static var version:String;
     
     public static var extenders:Dynamic;
+    
+    public static var selectExtensions:SelectExtensions;
+    
+    public static var expressionRewriting:ExpressionRewriting;
+    
+    public static var jsonExpressionRewriting:JsonExpressionRewriting;
+
+    public static var virtualElements:VirtualElements;
+    
+    public static var bindingProvider:Dynamic;
 
     public static var bindingHandlers:BindingHandlerMap;
-    
+
     public static var nativeTemplateEngine:TemplateEngine;
     
     public static var jqueryTmplTemplateEngine:TemplateEngine;
 
+    public static function applyBindings(viewModelOrBindingContext:Dynamic,?rootNode:js.html.Node):Void;
+    
+    public static function applyBindingsToDescendants(viewModelOrBindingContext:Dynamic,?rootNode:js.html.Node):Void;
+    
+    public static function applyBindingAccessorsToNode(node:js.html.Node, bindings:Dynamic, viewModelOrBindingContext: Dynamic):Void;
+    
+    public static function applyBindingsToNode(node:js.html.Node, bindings:Dynamic, viewModelOrBindingContext: Dynamic):Void;
+    
+    public static function contextFor(node:js.html.Node):Dynamic;
+    
+    public static function dataFor(node:js.html.Node):Dynamic;
+    
     public static function observable<T>(?value:T):ObservableExtern<T>;
 
     public static function observableArray<T>(?value:Either<Array<T>, T>):ObservableArrayExtern<T>;
 
     public static function computed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>):DependentObservableExtern<T>;
 
-    public static function applyBindings(viewModel:Dynamic,?rootNode:js.html.Node):Void;
-
     public static function unwrap<T>(value:Either<T, Subscribable<T>>):T;
+    
+    public static function isSubscribable(instance:Dynamic):Bool;
     
     public static function isObservable(instance:Dynamic):Bool;
     

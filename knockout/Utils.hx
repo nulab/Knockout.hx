@@ -9,6 +9,8 @@ class Utils {
     
     public static var fieldsIncludedWithJsonPost:Array<Dynamic>;
     
+    public static var domData:DomData;
+    
     public static function arrayForEach<T>(array:Array<T>, action:T -> Void):Void;
     
     public static function arrayFirst<T>(array:Array<T>, predicate:T -> Bool, ?predicateOwner:Dynamic):Null<T>;
@@ -54,6 +56,10 @@ class Utils {
     public static function parseHtmlFragment(template:Dynamic):Dynamic;
     
     public static function setHtml(node:Node, html:Dynamic):Void;
+    
+    public static function compareArrays(oldArray:Array<Dynamic>, newArray:Array<Dynamic>, options:Dynamic):Array<Dynamic>;
+    
+    public static function setDomNodeChildrenFromArrayMapping(domNode:Node, array:Array<Dynamic>, mapping:Dynamic, options:Dynamic, callbackAfterAddingNodes: Dynamic -> Array<Dynamic> -> Int -> Void):Void;
 
 }
 
