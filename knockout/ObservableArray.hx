@@ -5,33 +5,33 @@ import knockout.Observable;
 
 abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern<T>{
 
-    public static var fn:Dynamic = ObservableArrayFn;
+    inline public static var fn:Dynamic = ObservableArrayFn;
 
-    inline function new(observable:ObservableArrayExtern<T>) {
+    @:extern inline function new(observable:ObservableArrayExtern<T>) {
         this = observable;
     }
 
-    @:to inline public function toValue():Array<T> {
+    @:extern @:to inline public function toValue():Array<T> {
         return this.getter()();
     }
 
-    inline public function pop():T {
+    @:extern inline public function pop():T {
         return this.pop();
     }
 
-    inline public function push(x:T):Int {
+    @:extern inline public function push(x:T):Int {
         return this.push(x);
     }
 
-    inline public function reverse():Void {
+    @:extern inline public function reverse():Void {
         this.reverse();
     }
 
-    inline public function shift():T {
+    @:extern inline public function shift():T {
         return this.shift();
     }
 
-    inline public function sort(f:T -> T -> Int):Void {
+    @:extern inline public function sort(f:T -> T -> Int):Void {
         this.sort(f);
     }
 
@@ -40,71 +40,71 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
     @:overload(function(pos:Int, len:Int, a1:T, a2:T, a3:T):Array<T>{})
     @:overload(function(pos:Int, len:Int, a1:T, a2:T, a3:T, a4:T):Array<T>{})
     @:overload(function(pos:Int, len:Int, a1:T, a2:T, a3:T, a4:T, a5:T):Array<T>{})
-    inline public function splice(pos:Int, len:Int):Array<T> {
+    @:extern inline public function splice(pos:Int, len:Int):Array<T> {
         return this.splice(pos, len);
     }
 
-    inline public function unshift(x:T):Void {
+    @:extern inline public function unshift(x:T):Void {
         this.unshift(x);
     }
 
-    inline public function slice(pos:Int, ?end:Int):Array<T> {
+    @:extern inline public function slice(pos:Int, ?end:Int):Array<T> {
         return if (end == null) this.slice(pos) else this.slice(pos, end);
     }
 
-    inline public function remove(valueOrPredicate:Either<T -> Bool, T>):Array<T> {
+    @:extern inline public function remove(valueOrPredicate:Either<T -> Bool, T>):Array<T> {
         return this.remove(valueOrPredicate);
     }
 
-    inline public function removeAll(?arrayOfValues:Array<T>):Array<T> {
+    @:extern inline public function removeAll(?arrayOfValues:Array<T>):Array<T> {
         return if (arrayOfValues == null) this.removeAll() else this.removeAll(arrayOfValues);
     }
 
-    inline public function indexOf(item:T):Int {
+    @:extern inline public function indexOf(item:T):Int {
         return this.indexOf(item);
     }
 
-    inline public function replace(oldItem:T, newItem:T):Void {
+    @:extern inline public function replace(oldItem:T, newItem:T):Void {
         this.replace(oldItem, newItem);
     }
 
 // Observable methods
 
-    inline public function set(newValue:Array<T>):Observable<Array<T>> {
+    @:extern inline public function set(newValue:Array<T>):Observable<Array<T>> {
         return this.setter()(newValue);
     }
 
-    inline public function get():Array<T> {
+    @:extern inline public function get():Array<T> {
         return this.getter()();
     }
 
-    inline public function peek():Array<T> {
+    @:extern inline public function peek():Array<T> {
         return this.peek();
     }
 
-    inline public function valueHasMutated():Void {
+    @:extern inline public function valueHasMutated():Void {
         this.valueHasMutated();
     }
 
-    inline public function valueWillMutate():Void {
+    @:extern inline public function valueWillMutate():Void {
         this.valueWillMutate();
     }
 
 // Subscribable methods
 
-    inline public function extend(source:Dynamic):Subscribable<Array<T>> {
+    @:extern inline public function extend(source:Dynamic):Subscribable<Array<T>> {
         return this.extend(source);
     }
 
-    inline public function dispose():Void {
+    @:extern inline public function dispose():Void {
         this.dispose();
     }
 
-    inline public function getSubscriptionsCount():Int {
+    @:extern inline public function getSubscriptionsCount():Int {
         return this.getSubscriptionsCount();
     }
 
-    inline public function subscribe(call:Array<T> -> Void, ?callbackTarget:Dynamic, ?event:String):Subscription {
+    @:extern inline public function subscribe(call:Array<T> -> Void, ?callbackTarget:Dynamic, ?event:String):Subscription {
         return this.subscribe(call, callbackTarget, event);
     }
 }

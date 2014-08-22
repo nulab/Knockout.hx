@@ -4,55 +4,55 @@ import knockout.Subscribable;
 
 abstract Observable<T>(ObservableExtern<T>) from ObservableExtern<T>{
 
-    public static var fn:Dynamic = ObservableFn; 
+    inline public static var fn:Dynamic = ObservableFn;
 
-    inline function new(observable:ObservableExtern<T>) {
+    @:extern inline function new(observable:ObservableExtern<T>) {
         this = observable;
     }
 
-    @:to inline public function toValue():T {
+    @:extern @:to inline public function toValue():T {
         return this.getter()();
     }
 
-    @:op(A << B) static inline public function setValue<T>(lhs:Observable<T>, rhs:T):Void {
+    @:extern @:op(A << B) static inline public function setValue<T>(lhs:Observable<T>, rhs:T):Void {
         lhs.set(rhs);
     }
 
-    inline public function set(newValue:T):Observable<T> {
+    @:extern inline public function set(newValue:T):Observable<T> {
         return this.setter()(newValue);
     }
 
-    inline public function get():T {
+    @:extern inline public function get():T {
         return this.getter()();
     }
 
-    inline public function peek():T {
+    @:extern inline public function peek():T {
         return this.peek();
     }
 
-    inline public function valueHasMutated():Void {
+    @:extern inline public function valueHasMutated():Void {
         this.valueHasMutated();
     }
 
-    inline public function valueWillMutate():Void {
+    @:extern inline public function valueWillMutate():Void {
         this.valueWillMutate();
     }
 
     // Subscribable methods
 
-    inline public function extend(source:Dynamic):Subscribable<T>{
+    @:extern inline public function extend(source:Dynamic):Subscribable<T>{
         return this.extend(source);
     }
 
-    inline public function dispose():Void{
+    @:extern inline public function dispose():Void{
         this.dispose();
     }
 
-    inline public function getSubscriptionsCount():Int{
+    @:extern inline public function getSubscriptionsCount():Int{
         return this.getSubscriptionsCount();
     }
 
-    inline public function subscribe(call:T -> Void, ?callbackTarget:Dynamic, ?event:String):Subscription{
+    @:extern inline public function subscribe(call:T -> Void, ?callbackTarget:Dynamic, ?event:String):Subscription{
         return this.subscribe(call, callbackTarget, event);
     }
 }
