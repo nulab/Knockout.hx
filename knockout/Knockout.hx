@@ -26,7 +26,7 @@ class Knockout {
 
     public static function observableArray<T>(?value:Either<Array<T>, T>):ObservableArrayExtern<T>;
 
-    public static function computed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>):DependentObservableExtern<T>;
+    public static function computed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>, ?evaluatorFunctionTarget:Dynamic, ?options:Dynamic):DependentObservableExtern<T>;
 
     public static function applyBindings(viewModel:Dynamic,?rootNode:js.html.Node):Void;
 
