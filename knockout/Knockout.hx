@@ -15,7 +15,9 @@ class Knockout {
     public static var version:String;
     
     public static var extenders:Dynamic;
-    
+
+    public static var computedContext:ComputedContext;
+
     public static var selectExtensions:SelectExtensions;
     
     public static var expressionRewriting:ExpressionRewriting;

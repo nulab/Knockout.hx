@@ -4,8 +4,8 @@
     "license": "Public",
     "tags": ["js", "extern", "knockout"],
     "description": "Knockout extern",
-    "version": "3.0.0",
-    "releasenote": "Support Knockout 3.0.0",
+    "version": "3.1.0",
+    "releasenote": "Support Knockout 3.1.0",
     "contributors": ["hakurai"],
     "dependencies": {}
 }
