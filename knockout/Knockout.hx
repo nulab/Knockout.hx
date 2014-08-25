@@ -33,6 +33,8 @@ class Knockout {
     public static var nativeTemplateEngine:TemplateEngine;
     
     public static var jqueryTmplTemplateEngine:TemplateEngine;
+    
+    public static var components:Components;
 
     public static function applyBindings(viewModelOrBindingContext:Dynamic,?rootNode:js.html.Node):Void;
     
@@ -51,6 +53,8 @@ class Knockout {
     public static function observableArray<T>(?value:Either<Array<T>, T>):ObservableArrayExtern<T>;
 
     public static function computed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>, ?evaluatorFunctionTarget:Dynamic, ?options:Dynamic):DependentObservableExtern<T>;
+    
+    public static function pureComputed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>, ?evaluatorFunctionTarget:Dynamic):DependentObservableExtern<T>;
 
     public static function unwrap<T>(value:Either<T, Subscribable<T>>):T;
     

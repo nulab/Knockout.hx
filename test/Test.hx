@@ -55,7 +55,7 @@ class Test {
 
         var array2 = new Array<Float>();
         Utils.arrayPushAll(observableArray, array2);
-        
+
         observableArray = Knockout.observableArray(1.0);
 
     }
@@ -65,6 +65,13 @@ class Test {
 
         var computed:DependentObservable<String> = Knockout.computed(function() {
             return observable.get();
+        });
+    }
+
+    public static function components() {
+        Knockout.components.register("widget", {
+        viewModel: function(params:Dynamic) {},
+        template:"<div></div>"
         });
     }
 
