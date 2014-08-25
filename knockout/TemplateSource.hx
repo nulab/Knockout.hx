@@ -1,21 +1,27 @@
 package knockout;
 
 import js.html.Node;
-interface TemplateSource {
+typedef TemplateSource = {
 
-    public function text(?valueToWrite:Dynamic):Dynamic;
+    function text(?valueToWrite:Dynamic):Dynamic;
 
-    public function data(key:String, ?valueToWrite:Dynamic):Dynamic;
+    function data(key:String, ?valueToWrite:Dynamic):Dynamic;
     
-    public function nodes(?valueToWrite:Dynamic):Dynamic;
+    function nodes(?valueToWrite:Dynamic):Dynamic;
 
 }
 
 @:native("ko.templateSources.domElement")
 extern
-class DomElement implements TemplateSource{
+class DomElement{
 
     public function new(element:Node);
+
+    public function text(?valueToWrite:Dynamic):Dynamic;
+
+    public function data(key:String, ?valueToWrite:Dynamic):Dynamic;
+
+    public function nodes(?valueToWrite:Dynamic):Dynamic;
 
 }
 
