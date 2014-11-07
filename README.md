@@ -2,6 +2,12 @@
 
 knockout.hx is an extern file for Knockout.
 
+## Install
+
+```
+haxelib install knockout.hx
+```
+
 ## How to use
 
 ```javascript
