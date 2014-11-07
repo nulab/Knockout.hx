@@ -44,7 +44,7 @@ class Knockout {
     
     public static function applyBindingsToNode(node:js.html.Node, bindings:Dynamic, viewModelOrBindingContext: Dynamic):Void;
     
-    public static function contextFor(node:js.html.Node):Dynamic;
+    public static function contextFor(node:js.html.Node):BindingContext;
     
     public static function dataFor(node:js.html.Node):Dynamic;
     
