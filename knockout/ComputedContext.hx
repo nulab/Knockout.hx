@@ -1,8 +1,7 @@
 package knockout;
 
 @:native("ko.computedContext")
-extern
-class ComputedContext {
+extern class ComputedContext {
 
     public function getDependenciesCount():Int;
 

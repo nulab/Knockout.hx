@@ -1,8 +1,7 @@
 package knockout;
 
 @:native("ko.components")
-extern
-class Components {
+extern class Components {
 
     public function get(componentName:String, callback:ComponentConfig -> Void):Void;
 

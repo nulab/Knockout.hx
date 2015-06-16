@@ -2,8 +2,7 @@ package knockout;
 
 import js.html.Node;
 @:native("ko.virtualElements")
-extern
-class VirtualElements {
+extern class VirtualElements {
 
     public var allowedBindings:Dynamic<Bool>;
 

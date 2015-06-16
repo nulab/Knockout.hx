@@ -1,6 +1,5 @@
 package knockout;
-extern
-class Subscription {
+extern class Subscription {
 
     public function dispose():Void;
 }

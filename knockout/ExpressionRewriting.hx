@@ -2,8 +2,7 @@ package knockout;
 
 import knockout.Utils.Either;
 @:native("ko.expressionRewriting")
-extern
-class ExpressionRewriting {
+extern class ExpressionRewriting {
 
     public var bindingRewriteValidators:Dynamic;
     

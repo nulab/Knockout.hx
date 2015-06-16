@@ -4,8 +4,7 @@ import js.html.Document;
 import knockout.BindingContext;
 
 @:native("ko.templateEngine")
-extern
-class TemplateEngine {
+extern class TemplateEngine {
     public var allowTemplateRewriting:Bool;
     
     public function renderTemplateSource(templateSource:TemplateSource, bindingContext:BindingContext, option:Dynamic):Dynamic;

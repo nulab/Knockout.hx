@@ -1,7 +1,6 @@
 package knockout;
 @:native("ko.subscribable")
-extern
-class Subscribable<T> {
+extern class Subscribable<T> {
 
     public static var fn(default,null):Dynamic;
 

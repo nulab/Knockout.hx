@@ -2,8 +2,7 @@ package knockout;
 
 import js.html.Node;
 @:native("ko.memoization")
-extern
-class Memoization {
+extern class Memoization {
 
     public static function memoize(callback: Dynamic -> Void):String;
 

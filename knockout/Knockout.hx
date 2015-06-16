@@ -9,8 +9,7 @@ import knockout.TemplateEngine;
 
 
 @:native("ko")
-extern
-class Knockout {
+extern class Knockout {
 
     public static var version:String;
     

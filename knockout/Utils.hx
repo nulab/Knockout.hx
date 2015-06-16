@@ -4,8 +4,7 @@ import js.html.Node;
 import knockout.Utils.Either;
 import knockout.Subscribable;
 @:native("ko.utils")
-extern
-class Utils {
+extern class Utils {
     
     public static var fieldsIncludedWithJsonPost:Array<Dynamic>;
     
