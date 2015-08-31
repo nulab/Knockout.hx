@@ -58,8 +58,7 @@ abstract Observable<T>(ObservableExtern<T>) from ObservableExtern<T>{
 }
 
 
-extern
-class ObservableExtern<T> extends Subscribable<T> {
+extern class ObservableExtern<T> extends Subscribable<T> {
 
 inline function setter():T -> ObservableExtern<T> untyped {
     return this;
@@ -78,7 +77,6 @@ public function valueWillMutate():Void;
 }
 
 @:native("ko.observable.fn")
-extern
-class ObservableFn {
+extern class ObservableFn {
 
 }

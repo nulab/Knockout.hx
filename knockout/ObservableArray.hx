@@ -110,8 +110,7 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
 }
 
 
-extern
-class ObservableArrayExtern<T> extends ObservableExtern<Array<T>>{
+extern class ObservableArrayExtern<T> extends ObservableExtern<Array<T>>{
 
 public function pop():Null<T>;
 
@@ -140,7 +139,6 @@ public function replace(oldItem:T, newItem:T):Void;
 }
 
 @:native("ko.observableArray.fn")
-extern
-class ObservableArrayFn {
+extern class ObservableArrayFn {
 
 }

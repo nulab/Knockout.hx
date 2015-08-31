@@ -49,8 +49,7 @@ abstract DependentObservable<T>(DependentObservableExtern<T>) from DependentObse
 }
 
 
-extern
-class DependentObservableExtern<T> extends Subscribable<T>{
+extern class DependentObservableExtern<T> extends Subscribable<T>{
 
 public static var fn:Dynamic;
 public var value(get, set):T;
@@ -70,8 +69,7 @@ public function isActive():Bool;
 }
 
 @:native("ko.dependentObservable.fn")
-extern
-class DependentObservableFn {
+extern class DependentObservableFn {
 
 }
 

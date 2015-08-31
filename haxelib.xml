@@ -4,5 +4,5 @@
     <tag v="javascript"/>
     <tag v="extern"/>
     <description>Knockout extern</description>
-    <version name="2.3.0">Initial release</version>
+    <version name="3.2.0">Support Knockout 3.2.0</version>
 </project>

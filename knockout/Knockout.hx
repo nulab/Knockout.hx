@@ -1,7 +1,6 @@
 package knockout;
 
 import knockout.Utils.Either;
-import knockout.Utils.Either;
 import knockout.DependentObservable;
 import knockout.Observable;
 import knockout.ObservableArray;
