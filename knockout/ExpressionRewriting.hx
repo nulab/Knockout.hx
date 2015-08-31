@@ -1,6 +1,6 @@
 package knockout;
 
-import knockout.Utils.Either;
+import haxe.extern.EitherType;
 @:native("ko.expressionRewriting")
 extern class ExpressionRewriting {
 
@@ -10,6 +10,6 @@ extern class ExpressionRewriting {
 
     public function parseObjectLiteral(objectLiteralString:String):Array<Dynamic>;
 
-    public function preProcessBindings(bindingsStringOrKeyValueArray:Either<String,Array<Dynamic>>, bindingOptions:Dynamic):String;
+    public function preProcessBindings(bindingsStringOrKeyValueArray:EitherType<String,Array<Dynamic>>, bindingOptions:Dynamic):String;
 
 }

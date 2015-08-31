@@ -51,7 +51,7 @@ class Test {
         observableArray.push(10);
         var pos = observableArray.indexOf(10);
 
-        var inner:Array<Float> = observableArray;
+        var inner:Array<Float> = observableArray.get();
 
         var array2 = new Array<Float>();
         Utils.arrayPushAll(observableArray, array2);

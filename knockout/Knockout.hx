@@ -1,6 +1,6 @@
 package knockout;
 
-import knockout.Utils.Either;
+import haxe.extern.EitherType;
 import knockout.DependentObservable;
 import knockout.Observable;
 import knockout.ObservableArray;
@@ -48,13 +48,13 @@ extern class Knockout {
     
     public static function observable<T>(?value:T):ObservableExtern<T>;
 
-    public static function observableArray<T>(?value:Either<Array<T>, T>):ObservableArrayExtern<T>;
+    public static function observableArray<T>(?value:EitherType<T, Array<T>>):ObservableArrayExtern<T>;
 
-    public static function computed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>, ?evaluatorFunctionTarget:Dynamic, ?options:Dynamic):DependentObservableExtern<T>;
+    public static function computed<T>(evaluatorFunctionOrOptions:EitherType<Void -> T, DependentObservableOption<T>>, ?evaluatorFunctionTarget:Dynamic, ?options:Dynamic):DependentObservableExtern<T>;
     
-    public static function pureComputed<T>(evaluatorFunctionOrOptions:Either<Void -> T, DependentObservableOption<T>>, ?evaluatorFunctionTarget:Dynamic):DependentObservableExtern<T>;
+    public static function pureComputed<T>(evaluatorFunctionOrOptions:EitherType<Void -> T, DependentObservableOption<T>>, ?evaluatorFunctionTarget:Dynamic):DependentObservableExtern<T>;
 
-    public static function unwrap<T>(value:Either<T, Subscribable<T>>):T;
+    public static function unwrap<T>(value:EitherType<Subscribable<T>, T>):T;
     
     public static function isSubscribable(instance:Dynamic):Bool;
     

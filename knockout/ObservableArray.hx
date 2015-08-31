@@ -1,6 +1,5 @@
 package knockout;
-import Array;
-import knockout.Utils.Either;
+import haxe.extern.EitherType;
 import knockout.Observable;
 
 abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern<T>{
@@ -9,10 +8,6 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
 
     @:extern inline function new(observable:ObservableArrayExtern<T>) {
         this = observable;
-    }
-
-    @:extern @:to inline public function toValue():Array<T> {
-        return this.getter()();
     }
 
     @:extern inline public function pop():T {
@@ -52,7 +47,7 @@ abstract ObservableArray<T>(ObservableArrayExtern<T>) from ObservableArrayExtern
         return if (end == null) this.slice(pos) else this.slice(pos, end);
     }
 
-    @:extern inline public function remove(valueOrPredicate:Either<T -> Bool, T>):Array<T> {
+    @:extern inline public function remove(valueOrPredicate:EitherType<T -> Bool, T>):Array<T> {
         return this.remove(valueOrPredicate);
     }
 
@@ -128,7 +123,7 @@ public function unshift( x:T ):Void;
 
 public function slice( pos:Int, ?end:Int ):Array<T>;
 
-public function remove(valueOrPredicate:Either<T -> Bool, T>):Array<T>;
+public function remove(valueOrPredicate:EitherType<T -> Bool, T>):Array<T>;
 
 public function removeAll(?arrayOfValues:Array<T>):Array<T>;
 

@@ -1,7 +1,7 @@
 package knockout;
+import haxe.extern.EitherType;
 import js.html.Element;
 import js.html.Node;
-import knockout.Utils.Either;
 import knockout.Subscribable;
 @:native("ko.utils")
 extern class Utils {
@@ -22,17 +22,17 @@ extern class Utils {
     
     public static function arrayMap<T1, T2>(array:Array<T1>, mapping:T1 -> T2):Array<T2>;
     
-    public static function arrayPushAll<T>(array:Either<Array<T>, ObservableArray<T>>, valuesToPush:Array<T>):Array<T>;
+    public static function arrayPushAll<T>(array:EitherType<Array<T>, ObservableArray<T>>, valuesToPush:Array<T>):Array<T>;
     
-    public static function arrayRemoveItem<T>(array:Either<Array<T>, ObservableArray<T>>, itemToRemove:T):Void;
+    public static function arrayRemoveItem<T>(array:EitherType<Array<T>, ObservableArray<T>>, itemToRemove:T):Void;
     
     public static function extend(target:Dynamic, source:Dynamic):Void;
     
-    public static function getFormFields(form:Element, fieldName:Either<String, EReg>):Array<Node>;
+    public static function getFormFields(form:Element, fieldName:EitherType<String, EReg>):Array<Node>;
     
-    public static function peekObservable<T>(value:Either<T, Subscribable<T>>):T;
+    public static function peekObservable<T>(value:EitherType<T, Subscribable<T>>):T;
     
-    public static function postJson(urlOrForm:Either<String, Element>, data:Either<Dynamic, Subscribable<Dynamic>>, options:Dynamic):Void;
+    public static function postJson(urlOrForm:EitherType<String, Element>, data:EitherType<Dynamic, Subscribable<Dynamic>>, options:Dynamic):Void;
     
     public static function parseJson(jsonString:String):Dynamic;
     
@@ -40,13 +40,13 @@ extern class Utils {
     
     public static function stringifyJson(data:Dynamic):String;
     
-    public static function range(min:Either<Int, Subscribable<Int>>, max:Either<Int, Subscribable<Int>>):Array<Int>;
+    public static function range(min:EitherType<Int, Subscribable<Int>>, max:EitherType<Int, Subscribable<Int>>):Array<Int>;
     
     public static function toggleDomNodeCssClass(node:Element, className:String, shouldHaveClass:Bool):Void;
     
     public static function triggerEvent(element:Node, eventType:String):Void;
     
-    public static function unwrapObservable<T>(value:Either<T, Subscribable<T>>):T;
+    public static function unwrapObservable<T>(value:EitherType<T, Subscribable<T>>):T;
     
     public static function objectForEach(obj:Dynamic, action:String -> Dynamic -> Void):Void;
     
@@ -61,5 +61,3 @@ extern class Utils {
     public static function setDomNodeChildrenFromArrayMapping(domNode:Node, array:Array<Dynamic>, mapping:Dynamic, options:Dynamic, callbackAfterAddingNodes: Dynamic -> Array<Dynamic> -> Int -> Void):Void;
 
 }
-
-abstract Either<T1, T2>(Dynamic) from T1 from T2 to T1 to T2 {}
